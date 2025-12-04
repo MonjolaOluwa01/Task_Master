@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TaskMaster – Tasks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/tasks.css" />
+  </head>
+
+  <body data-page="tasks">
+    <div class="app-shell">
+        <div class="sidebar-container" id="sidebar-container"></div>
+      
+      <main class="main">
+        <section class="tasks-header-card">
+          <div class="tasks-header-left">
+            <div class="tasks-header-icon">
+              <img
+                src="assets/icons/material-symbols-light--check-box-outline(white).png"
+                alt=""
+              />
+            </div>
+            <div>
+              <h1 class="tasks-title">Task Management</h1>
+              <p class="tasks-subtitle">Manage and track your tasks</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="tasks-tabs-row">
+          <div class="tasks-tabs">
+            <button
+              class="tasks-tab tasks-tab--active"
+              data-view="my-tasks"
+              type="button"
+            >
+              <span class="tasks-tab-dot"></span>
+              My Tasks
+            </button>
+            <button
+              class="tasks-tab"
+              data-view="ai-summary"
+              type="button"
+            >
+              <span class="tasks-tab-icon-ai"></span>
+              AI Summary
+            </button>
+          </div>
+
+          <button class="tasks-add-btn" type="button">
+            + Add Task
+          </button>
+        </section>
+
+        <section class="tasks-view tasks-view--my tasks-view--active" id="view-my-tasks">
+          <div class="tasks-stats">
+            <div class="tasks-stat">
+              <div class="tasks-stat-number">0</div>
+              <div class="tasks-stat-label">Active tasks</div>
+            </div>
+
+            <div class="tasks-stats-divider"></div>
+
+            <div class="tasks-stat tasks-stat--green">
+              <div class="tasks-stat-number">0</div>
+              <div class="tasks-stat-label">Completed</div>
+            </div>
+          </div>
+
+          <div class="tasks-empty-card">
+            <div class="tasks-empty-inner">
+              <div class="tasks-empty-circle"></div>
+              <p class="tasks-empty-title">No tasks yet</p>
+              <p class="tasks-empty-subtitle">
+                Click "Add Task" to create your first task
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="tasks-view tasks-view--ai"
+          id="view-ai-summary"
+        >
+          <div class="ai-header-row">
+            <div>
+              <h2 class="ai-title">AI-Powered Task Summary</h2>
+              <p class="ai-subtitle">
+                Get insights and recommendations for your tasks
+              </p>
+            </div>
+
+            <button class="ai-generate-btn" type="button">
+              <span><img src="assets/icons/humbleicons--sparks (1).png" class="ai-generate-icon">Generate New</span>
+            </button>
+          </div>
+
+          <div class="ai-inner-tabs">
+            <button
+              class="ai-inner-tab ai-inner-tab--active"
+              data-ai-tab="latest"
+              type="button"
+            >
+              <span class="ai-inner-icon"></span>
+              Latest Summary
+            </button>
+            <button
+              class="ai-inner-tab"
+              data-ai-tab="history"
+              type="button"
+            >
+              <span class="ai-inner-clock"></span>
+              History (0)
+            </button>
+          </div>
+
+          <div class="ai-empty-card">
+            <div class="ai-empty-inner">
+              <div class="ai-empty-chart"></div>
+              <p class="ai-empty-title">No summary generated yet</p>
+              <p class="ai-empty-subtitle">
+                Click "Generate New" to get AI-powered insights
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="js/loader.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+      loadComponent("sidebar-container", "components/sidebar.html");
+      });
+    </script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+    <script src="js/tasks.js" defer></script>
+  </body>
+</html>

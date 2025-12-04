@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TaskMaster – Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body data-page="dashboard">
+    <div class="app-shell">
+      <div class="sidebar-container" id="sidebar-container"></div>
+      
+      <main class="main">
+        <header class="main__header">
+          <div class="main__titles">
+            <h1 class="main__greeting" id="mainGreeting">
+              Good morning, Mo!
+            </h1>
+            <p class="main__subtitle">
+              Here’s what’s happening with your productivity today
+            </p>
+          </div>
+        </header>
+
+        <section class="stats">
+          <div class="stat-card">
+            <div class="stat-card__header">
+            <span class="stat-card__title">Active Tasks</span>
+            <div class="stat-card__icon stat-card__icon--tasks"><img src="assets/icons/fluent--tasks-app-24-regular.png" class="icon-img"></div>
+            </div>
+            <div class="stat-card__value">0</div>
+            <div class="stat-card__meta">0 completed</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card__header">
+            <span class="stat-card__title">Total Expenses</span>
+            <div class="stat-card__icon stat-card__icon--expenses"><img src="assets/icons/mynaui--dollar-solid.png" class="icon-img"></div>
+            </div>
+            <div class="stat-card__value">$0.00</div>
+            <div class="stat-card__meta">This period</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card__header">
+            <span class="stat-card__title">Total Notes</span>
+            <div class="stat-card__icon stat-card__icon--notes"><img src="assets/icons/grommet-icons--notes.png" class="icon-img"></div>
+            </div>
+            <div class="stat-card__value">0</div>
+            <div class="stat-card__meta">Saved notes</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card__header">
+            <span class="stat-card__title">Completion Rate</span>
+            <div class="stat-card__icon stat-card__icon--completion"><img src="assets/icons/lucide--trending-up.png" class="icon-img"></div>
+            </div>
+            <div class="stat-card__value">0%</div>
+            <div class="stat-card__meta">Task completion</div>
+          </div>
+        </section>
+
+        <section class="grid">
+          <div class="panel">
+            <div class="panel__header">
+              <div class="panel__title">
+                <span class="panel__icon panel__icon--clock"><img src="assets/icons/si--clock-line (2).png" class="icon-img"></span>
+                Recent Tasks
+              </div>
+            </div>
+            <div class="panel__body panel__body--empty">
+              <div class="empty-state">
+                <div><img src="assets/icons/material-symbols-light--check-box-outline(grey).png" class="panel-img"></div>
+                <div class="empty-state__text">No tasks yet</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="panel">
+            <div class="panel__header">
+              <div class="panel__title">
+                <span class="panel__icon panel__icon--trend"><img src="assets/icons/ph--trend-up.png" class="icon-img"></span>
+                Quick Actions
+              </div>
+            </div>
+            <div class="panel__body panel__body--list">
+              <button class="action">
+                <span class="action__icon action__icon--task"><img src="assets/icons/material-symbols-light--check-box-outline(white).png" class="icon-img" ></span>
+                <div class="action__text">
+                  <div class="action__title">Create New Task</div>
+                  <div class="action__subtitle">Add a task to your list</div>
+                </div>
+              </button>
+              <button class="action">
+                <span class="action__icon action__icon--expense"><img src="assets/icons/mynaui--dollar-solid.png" class="icon-img"></span>
+                <div class="action__text">
+                  <div class="action__title">Track Expense</div>
+                  <div class="action__subtitle">Record a new expense</div>
+                </div>
+              </button>
+              <button class="action">
+                <span class="action__icon action__icon--note"><img src="assets/icons/grommet-icons--notes.png" class="icon-img"></span>
+                <div class="action__text">
+                  <div class="action__title">Write Note</div>
+                  <div class="action__subtitle">Capture your thoughts</div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="js/loader.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+      loadComponent("sidebar-container", "/components/sidebar.html");
+      });
+    </script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+  </body>
+</html>
